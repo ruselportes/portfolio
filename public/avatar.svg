@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00e5ff"/>
+      <stop offset="100%" style="stop-color:#7c4dff"/>
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#a0a0b8;stop-opacity:0.6"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="200" height="200" rx="100" fill="url(#bgGrad)" opacity="0.15"/>
+  <!-- Decorative Coding Symbols -->
+  <text x="35" y="70" fill="#00e5ff" font-family="Courier, monospace" font-size="20" font-weight="bold" opacity="0.6">&lt;&gt;</text>
+  <text x="145" y="140" fill="#7c4dff" font-family="Courier, monospace" font-size="20" font-weight="bold" opacity="0.6">{}</text>
+  <!-- Avatar body -->
+  <circle cx="100" cy="80" r="32" fill="url(#avatarGrad)"/>
+  <path d="M50 155 C50 120, 80 120, 100 120 C120 120, 150 120, 150 155" fill="url(#avatarGrad)"/>
+  <!-- Glowing code lines on chest -->
+  <path d="M85 135 H115" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <path d="M75 143 H125" stroke="#7c4dff" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+</svg>

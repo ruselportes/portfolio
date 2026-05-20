@@ -1,0 +1,141 @@
+/* ============================================================
+   SKILLS.CSS — Category Cards · Skill Tags · Responsive Grid
+   ============================================================ */
+
+/* — Section ------------------------------------------------- */
+.skills {
+  background: var(--bg-primary);
+}
+
+/* — Cards Grid ---------------------------------------------- */
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* — Category Card ------------------------------------------- */
+.skills__card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-base);
+}
+
+.skills__card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 8px 40px rgba(0, 229, 255, 0.1),
+              0 0 60px rgba(124, 77, 255, 0.06);
+}
+
+/* — Card Header --------------------------------------------- */
+.skills__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skills__card-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(0, 229, 255, 0.08);
+  font-size: 1.35rem;
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+/* Violet variant */
+.skills__card--violet .skills__card-icon {
+  background: rgba(124, 77, 255, 0.08);
+  color: var(--accent-violet);
+}
+
+/* Mixed variant */
+.skills__card--mixed .skills__card-icon {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(124, 77, 255, 0.08));
+  color: var(--accent-cyan);
+}
+
+.skills__card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* — Skill Tags ---------------------------------------------- */
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-pill);
+  transition: color var(--transition-base),
+              background var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+  cursor: default;
+}
+
+.skills__tag:hover {
+  color: var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.06);
+  border-color: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+}
+
+.skills__tag-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Violet hover variant */
+.skills__card--violet .skills__tag:hover {
+  color: var(--accent-violet);
+  background: rgba(124, 77, 255, 0.06);
+  border-color: rgba(124, 77, 255, 0.2);
+  box-shadow: 0 0 12px rgba(124, 77, 255, 0.1);
+}
+
+/* — Card description (optional) ----------------------------- */
+.skills__card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}

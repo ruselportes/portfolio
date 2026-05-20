@@ -1,0 +1,227 @@
+/* ============================================================
+   PROJECTS.CSS — Filters · Cards · Tech Tags · Responsive
+   ============================================================ */
+
+/* — Section ------------------------------------------------- */
+.projects {
+  background: var(--bg-secondary);
+}
+
+/* — Filter Buttons ------------------------------------------ */
+.projects__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.5rem;
+}
+
+.projects__filter-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color var(--transition-base),
+              background var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.projects__filter-btn:hover,
+.projects__filter-btn:focus-visible {
+  color: var(--text-primary);
+  border-color: rgba(0, 229, 255, 0.25);
+}
+
+.projects__filter-btn.active {
+  color: var(--bg-primary);
+  background: var(--gradient-accent);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+  font-weight: 600;
+}
+
+/* — Cards Grid ---------------------------------------------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* — Project Card -------------------------------------------- */
+.projects__card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.projects__card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 229, 255, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 229, 255, 0.1),
+              0 0 0 1px rgba(0, 229, 255, 0.08);
+}
+
+/* Hiding filtered cards */
+.projects__card.hidden {
+  display: none;
+}
+
+/* — Card Image ---------------------------------------------- */
+.projects__card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.projects__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+
+.projects__card:hover .projects__card-image img {
+  transform: scale(1.05);
+}
+
+/* Gradient overlay on image */
+.projects__card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(10, 10, 26, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* — AI Badge ------------------------------------------------ */
+.projects__ai-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+}
+
+/* — Card Body ----------------------------------------------- */
+.projects__card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.projects__card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.projects__card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* — Tech Tags ----------------------------------------------- */
+.projects__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.projects__tag {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-pill);
+}
+
+/* — Card Footer / Links ------------------------------------- */
+.projects__card-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-glass);
+}
+
+.projects__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-pill);
+  transition: color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.projects__link:hover,
+.projects__link:focus-visible {
+  color: var(--accent-cyan);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+}
+
+.projects__link-icon {
+  font-size: 0.95rem;
+}
+
+/* — Empty State --------------------------------------------- */
+.projects__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}

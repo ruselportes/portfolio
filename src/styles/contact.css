@@ -1,0 +1,285 @@
+/* ============================================================
+   CONTACT.CSS — Form · Social Links · Footer
+   ============================================================ */
+
+/* — Section ------------------------------------------------- */
+.contact {
+  background: var(--bg-secondary);
+}
+
+/* — Layout -------------------------------------------------- */
+.contact__wrapper {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* — Form Card ----------------------------------------------- */
+.contact__form-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+}
+
+@media (max-width: 480px) {
+  .contact__form-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* — Form ---------------------------------------------------- */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* — Form Group ---------------------------------------------- */
+.contact__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Two-column row for name/email */
+.contact__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .contact__row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* — Label --------------------------------------------------- */
+.contact__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* — Input / Textarea ---------------------------------------- */
+.contact__input,
+.contact__textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-input);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: rgba(160, 160, 184, 0.4);
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1),
+              0 0 16px rgba(0, 229, 255, 0.08);
+}
+
+.contact__textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* — Submit Button ------------------------------------------- */
+.contact__submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg-primary);
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.contact__submit:hover,
+.contact__submit:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 229, 255, 0.35),
+              0 0 50px rgba(124, 77, 255, 0.15);
+}
+
+.contact__submit:active {
+  transform: translateY(0);
+}
+
+/* Loading state */
+.contact__submit.loading {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.contact__submit.loading .contact__submit-text {
+  opacity: 0;
+}
+
+.contact__spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(10, 10, 26, 0.3);
+  border-top-color: var(--bg-primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: none;
+}
+
+.contact__submit.loading .contact__spinner {
+  display: block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success state */
+.contact__submit.success {
+  background: #00c853;
+}
+
+/* — Status Message ------------------------------------------ */
+.contact__status {
+  text-align: center;
+  font-size: 0.88rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  display: none;
+}
+
+.contact__status.show {
+  display: block;
+  animation: fadeInUp 0.4s var(--ease-out-expo) both;
+}
+
+.contact__status.success {
+  color: #69f0ae;
+  background: rgba(105, 240, 174, 0.08);
+  border: 1px solid rgba(105, 240, 174, 0.15);
+}
+
+.contact__status.error {
+  color: #ff5252;
+  background: rgba(255, 82, 82, 0.08);
+  border: 1px solid rgba(255, 82, 82, 0.15);
+}
+
+/* — Social Links -------------------------------------------- */
+.contact__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.contact__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  transition: color var(--transition-base),
+              background var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              transform var(--transition-base);
+}
+
+.contact__social-link:hover,
+.contact__social-link:focus-visible {
+  color: var(--accent-cyan);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.contact__social-link svg,
+.contact__social-link i {
+  width: 20px;
+  height: 20px;
+}
+
+/* — Footer -------------------------------------------------- */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--border-glass);
+  background: var(--bg-primary);
+}
+
+.footer__text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.footer__text a {
+  color: var(--accent-cyan);
+  transition: color var(--transition-base);
+}
+
+.footer__text a:hover {
+  color: var(--accent-violet);
+}
+
+.footer__heart {
+  color: var(--accent-violet);
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.15); }
+}
+
+/* — Divider ------------------------------------------------- */
+.contact__divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.contact__divider::before,
+.contact__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-glass);
+}

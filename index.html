@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rusel Portes — Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Rusel Portes is a Full-Stack Developer specializing in React, Laravel, AI automation, and IoT. View projects, skills, and get in touch.">
+    <meta name="keywords" content="Rusel Portes, Full-Stack Developer, React, Laravel, AI, Portfolio">
+    <meta name="author" content="Rusel Portes">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rusel Portes — Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer specializing in web apps, AI automation, and IoT systems.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Entry -->
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="#hero" class="navbar__logo">Rusel<span>.</span></a>
+            
+            <!-- Desktop Links -->
+            <div class="navbar__links">
+                <a href="#about" class="navbar__link">About</a>
+                <a href="#skills" class="navbar__link">Skills</a>
+                <a href="#projects" class="navbar__link">Projects</a>
+                <a href="#experience" class="navbar__link">Experience</a>
+                <a href="#contact" class="navbar__link">Contact</a>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="navbar__drawer" id="navDrawer">
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#skills" class="navbar__link">Skills</a>
+        <a href="#projects" class="navbar__link">Projects</a>
+        <a href="#experience" class="navbar__link">Experience</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+    </div>
+    <div class="navbar__drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" id="hero">
+        <canvas id="hero-canvas" class="hero__canvas"></canvas>
+        <div class="hero__content">
+            <p class="hero__greeting animate-on-scroll">Hi, I'm</p>
+            <h1 class="hero__name animate-on-scroll" data-delay="100">Rusel <span class="highlight">Portes</span></h1>
+            <div class="hero__typing animate-on-scroll" data-delay="200">
+                <span>&lt;</span><span id="typing-text"></span><span class="hero__cursor"></span><span>/&gt;</span>
+            </div>
+            <p class="hero__description animate-on-scroll" data-delay="300">
+                Full-Stack Developer crafting modern web apps, mobile experiences, and AI-powered solutions.
+            </p>
+            <div class="hero__cta animate-on-scroll" data-delay="400">
+                <a href="#projects" class="btn btn--primary">View My Work</a>
+                <a href="#contact" class="btn btn--secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Scroll</span>
+            <div class="hero__scroll-chevron"></div>
+        </div>
+    </section>
+
+    <!-- ======================== ABOUT ======================== -->
+    <section class="section about section-padding" id="about">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <h2>About <span>Me</span></h2>
+            </div>
+            <div class="about__grid">
+                <div class="about__image-wrapper animate-on-scroll" data-delay="100">
+                    <div class="about__avatar">
+                        <img src="/avatar.svg" alt="Rusel Portes">
+                    </div>
+                    <div class="about__badge">
+                        <span class="about__badge-icon">🤖</span>
+                        <span>AI-Assisted Developer</span>
+                    </div>
+                </div>
+                <div class="about__content">
+                    <p class="about__bio animate-on-scroll" data-delay="200">
+                        I'm <strong>Rusel</strong>, a Full-Stack Developer and BSIT student passionate about building end-to-end solutions — from responsive web apps and mobile experiences to AI-powered automation and IoT systems.
+                    </p>
+                    <p class="about__bio animate-on-scroll" data-delay="300">
+                        I embrace AI-assisted development as a core part of my workflow, using advanced coding assistants like <strong>Antigravity</strong> to accelerate development, design premium experiences, and ship projects faster.
+                    </p>
+                    <div class="about__stats animate-on-scroll" data-delay="400">
+                        <div class="about__stat">
+                            <span class="about__stat-number">8+</span>
+                            <span class="about__stat-label">Projects Built</span>
+                        </div>
+                        <div class="about__stat">
+                            <span class="about__stat-number">6+</span>
+                            <span class="about__stat-label">Technologies</span>
+                        </div>
+                        <div class="about__stat">
+                            <span class="about__stat-number">∞</span>
+                            <span class="about__stat-label">Curiosity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SKILLS ======================== -->
+    <section class="section skills section-padding" id="skills">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <h2>Skills & <span>Technologies</span></h2>
+                <p>Technologies I work with across the full stack</p>
+            </div>
+            <div class="skills__grid">
+                <!-- Frontend -->
+                <div class="skills__card animate-on-scroll" data-delay="200">
+                    <div class="skills__card-header">
+                        <div class="skills__card-icon">🎨</div>
+                        <h3 class="skills__card-title">Frontend</h3>
+                    </div>
+                    <div class="skills__tags">
+                        <span class="skills__tag">React</span>
+                        <span class="skills__tag">TypeScript</span>
+                        <span class="skills__tag">Vite</span>
+                        <span class="skills__tag">HTML / CSS</span>
+                        <span class="skills__tag">JavaScript</span>
+                        <span class="skills__tag">Remotion</span>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="skills__card skills__card--violet animate-on-scroll" data-delay="300">
+                    <div class="skills__card-header">
+                        <div class="skills__card-icon">⚙️</div>
+                        <h3 class="skills__card-title">Backend</h3>
+                    </div>
+                    <div class="skills__tags">
+                        <span class="skills__tag">Laravel (PHP)</span>
+                        <span class="skills__tag">ASP.NET Core</span>
+                        <span class="skills__tag">C#</span>
+                        <span class="skills__tag">Python FastAPI</span>
+                        <span class="skills__tag">Node.js</span>
+                        <span class="skills__tag">MySQL</span>
+                        <span class="skills__tag">SQL Server</span>
+                        <span class="skills__tag">Supabase</span>
+                    </div>
+                </div>
+                <!-- Mobile & DevOps & AI -->
+                <div class="skills__card skills__card--mixed animate-on-scroll" data-delay="400">
+                    <div class="skills__card-header">
+                        <div class="skills__card-icon">🚀</div>
+                        <h3 class="skills__card-title">Mobile & DevOps & AI</h3>
+                    </div>
+                    <div class="skills__tags">
+                        <span class="skills__tag">React Native</span>
+                        <span class="skills__tag">Expo</span>
+                        <span class="skills__tag">Android</span>
+                        <span class="skills__tag">Docker</span>
+                        <span class="skills__tag">Nginx</span>
+                        <span class="skills__tag">Git</span>
+                        <span class="skills__tag">CrewAI</span>
+                        <span class="skills__tag">Ollama</span>
+                        <span class="skills__tag">Arduino</span>
+                        <span class="skills__tag">ESP32</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PROJECTS ======================== -->
+    <section class="section projects section-padding" id="projects">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <h2>Featured <span>Projects</span></h2>
+                <p>A selection of projects I've built — all AI-assisted</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="projects__filters animate-on-scroll" data-delay="200">
+                <button class="projects__filter-btn active" data-filter="all">All</button>
+                <button class="projects__filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="projects__filter-btn" data-filter="ai">AI</button>
+                <button class="projects__filter-btn" data-filter="iot">IoT</button>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="projects__grid">
+
+                <!-- NeoFit -->
+                <div class="projects__card animate-on-scroll" data-category="fullstack" data-delay="300">
+                    <div class="projects__card-image">
+                        <img src="/src/assets/neofit.png" alt="NeoFit Fitness Gym Dashboard" loading="lazy">
+                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                    </div>
+                    <div class="projects__card-body">
+                        <h3 class="projects__card-title">NeoFit Fitness Gym</h3>
+                        <p class="projects__card-desc">A premium full-stack admin dashboard for a fitness gym. Manages members, tracks attendance, and handles gym operations with secure auth and theme toggle.</p>
+                        <div class="projects__tags">
+                            <span class="projects__tag">React</span>
+                            <span class="projects__tag">TypeScript</span>
+                            <span class="projects__tag">Laravel</span>
+                            <span class="projects__tag">MySQL</span>
+                            <span class="projects__tag">Docker</span>
+                        </div>
+                        <div class="projects__card-links">
+                            <a href="https://github.com/ruselportes/NeoFit" target="_blank" rel="noopener noreferrer" class="projects__link" id="project-neofit-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="projects__link-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI TikTok Generator -->
+                <div class="projects__card animate-on-scroll" data-category="ai" data-delay="400">
+                    <div class="projects__card-image">
+                        <img src="/src/assets/tiktok-gen.png" alt="AI TikTok Generator Dashboard" loading="lazy">
+                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                    </div>
+                    <div class="projects__card-body">
+                        <h3 class="projects__card-title">Local AI TikTok Generator</h3>
+                        <p class="projects__card-desc">An automated, 100% local/offline video editing pipeline for creating viral short-form TikTok videos using multi-agent AI — no paid APIs needed.</p>
+                        <div class="projects__tags">
+                            <span class="projects__tag">Remotion</span>
+                            <span class="projects__tag">CrewAI</span>
+                            <span class="projects__tag">FastAPI</span>
+                            <span class="projects__tag">Ollama</span>
+                            <span class="projects__tag">Docker</span>
+                        </div>
+                        <div class="projects__card-links">
+                            <a href="https://github.com/ruselportes/video-editor" target="_blank" rel="noopener noreferrer" class="projects__link" id="project-tiktok-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="projects__link-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SolarStation -->
+                <div class="projects__card animate-on-scroll" data-category="iot" data-delay="500">
+                    <div class="projects__card-image">
+                        <img src="/src/assets/solarstation.png" alt="SolarStation IoT Dashboard" loading="lazy">
+                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                    </div>
+                    <div class="projects__card-body">
+                        <h3 class="projects__card-title">SolarStation — IoT + Android</h3>
+                        <p class="projects__card-desc">An autonomous portable dual-axis solar charging station with a companion Android app for monitoring and control.</p>
+                        <div class="projects__tags">
+                            <span class="projects__tag">Android</span>
+                            <span class="projects__tag">Arduino</span>
+                            <span class="projects__tag">ESP32</span>
+                            <span class="projects__tag">IoT</span>
+                        </div>
+                        <div class="projects__card-links">
+                            <a href="https://github.com/ruselportes" target="_blank" rel="noopener noreferrer" class="projects__link" id="project-solar-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="projects__link-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foodhub -->
+                <div class="projects__card animate-on-scroll" data-category="fullstack" data-delay="600">
+                    <div class="projects__card-image">
+                        <img src="/src/assets/foodhub.png" alt="Foodhub Food Delivery System" loading="lazy">
+                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                    </div>
+                    <div class="projects__card-body">
+                        <h3 class="projects__card-title">Foodhub — Food Delivery</h3>
+                        <p class="projects__card-desc">A full-featured online food delivery system with user authentication, order management, and Azure cloud integration.</p>
+                        <div class="projects__tags">
+                            <span class="projects__tag">ASP.NET Core</span>
+                            <span class="projects__tag">C#</span>
+                            <span class="projects__tag">SQL Server</span>
+                            <span class="projects__tag">Azure</span>
+                        </div>
+                        <div class="projects__card-links">
+                            <a href="https://github.com/ruselportes" target="_blank" rel="noopener noreferrer" class="projects__link" id="project-foodhub-github">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="projects__link-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== EXPERIENCE ======================== -->
+    <section class="section experience section-padding" id="experience">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <h2>My <span>Experience</span></h2>
+                <p>My journey in tech so far</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Entry 1 -->
+                <div class="timeline__item animate-on-scroll" data-delay="200">
+                    <div class="timeline__dot"></div>
+                    <div class="timeline__card">
+                        <span class="timeline__date">2024 — Present</span>
+                        <h3 class="timeline__role">Full-Stack & AI Projects</h3>
+                        <p class="timeline__company">Personal / Open Source</p>
+                        <p class="timeline__desc">Building production-grade applications — NeoFit Gym Dashboard (React + Laravel + Docker) and an AI-powered TikTok video generator using CrewAI + Remotion.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="timeline__item animate-on-scroll" data-delay="300">
+                    <div class="timeline__dot"></div>
+                    <div class="timeline__card">
+                        <span class="timeline__date">2024</span>
+                        <h3 class="timeline__role">Freelance / Client Work</h3>
+                        <p class="timeline__company">BiskaNada · MotoFlow</p>
+                        <p class="timeline__desc">Designed website proposals and system architectures for local businesses — including a food delivery site and a motorcycle rental reservation system.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="timeline__item animate-on-scroll" data-delay="400">
+                    <div class="timeline__dot"></div>
+                    <div class="timeline__card">
+                        <span class="timeline__date">2023 — 2024</span>
+                        <h3 class="timeline__role">Mobile & IoT Development</h3>
+                        <p class="timeline__company">Academic / Personal</p>
+                        <p class="timeline__desc">Developed NoteNest (React Native/Expo) and SolarStation (Android + Arduino/ESP32) — an autonomous dual-axis solar charging system with a companion monitoring app.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 4 -->
+                <div class="timeline__item animate-on-scroll" data-delay="500">
+                    <div class="timeline__dot"></div>
+                    <div class="timeline__card">
+                        <span class="timeline__date">2022 — 2023</span>
+                        <h3 class="timeline__role">Desktop & Backend Development</h3>
+                        <p class="timeline__company">Academic Projects</p>
+                        <p class="timeline__desc">Built desktop applications in C# (SpendSmart, E-Commerce System) and full-stack web apps with ASP.NET Core (Foodhub) and Laravel.</p>
+                    </div>
+                </div>
+
+                <!-- Entry 5 -->
+                <div class="timeline__item animate-on-scroll" data-delay="600">
+                    <div class="timeline__dot"></div>
+                    <div class="timeline__card">
+                        <span class="timeline__date">Ongoing</span>
+                        <h3 class="timeline__role">BSIT Student</h3>
+                        <p class="timeline__company">Talibon Polytechnic College</p>
+                        <p class="timeline__desc">Pursuing a Bachelor of Science in Information Technology while continuously building real-world projects and expanding my skill set.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CONTACT ======================== -->
+    <section class="section contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Have a project in mind? Let's work together.</p>
+            </div>
+
+            <div class="contact__wrapper animate-on-scroll" data-delay="200">
+                <div class="contact__form-card">
+                    <form class="contact__form" id="contactForm">
+                        <div class="contact__row">
+                            <div class="contact__group">
+                                <label for="contact-name" class="contact__label">Your Name</label>
+                                <input type="text" id="contact-name" class="contact__input" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="contact__group">
+                                <label for="contact-email" class="contact__label">Your Email</label>
+                                <input type="email" id="contact-email" class="contact__input" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="contact__group">
+                            <label for="contact-message" class="contact__label">Message</label>
+                            <textarea id="contact-message" class="contact__textarea" name="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="contact__submit" id="contact-submit">
+                            <span class="contact__submit-text">Send Message</span>
+                            <span class="contact__spinner" aria-hidden="true"></span>
+                        </button>
+                    </form>
+                    <div class="contact__status" id="contactStatus"></div>
+                </div>
+
+                <div class="contact__divider">or reach me directly</div>
+
+                <div class="contact__socials animate-on-scroll" data-delay="300">
+                    <a href="https://github.com/ruselportes" target="_blank" rel="noopener noreferrer" class="contact__social-link" id="social-github" aria-label="GitHub">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="mailto:ruselportes21@gmail.com" class="contact__social-link" id="social-email" aria-label="Email">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">
+                &copy; 2026 Rusel Portes. Built with <span class="footer__heart">♥</span> and AI-assisted development.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

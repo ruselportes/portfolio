@@ -1,0 +1,235 @@
+/* ============================================================
+   HERO.CSS — Full-Screen Hero · Canvas BG · CTA · Scroll Indicator
+   ============================================================ */
+
+/* — Section ------------------------------------------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+/* — Particle / Background Canvas ---------------------------- */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle radial gradient overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(0, 229, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(124, 77, 255, 0.06) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* — Content ------------------------------------------------- */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  max-width: 800px;
+  animation: fadeInUp 0.8s var(--ease-out-expo) both;
+}
+
+/* Greeting */
+.hero__greeting {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 400;
+  color: var(--accent-cyan);
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  animation: fadeInUp 0.8s var(--ease-out-expo) 0.15s both;
+}
+
+/* Name */
+.hero__name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  animation: fadeInUp 0.8s var(--ease-out-expo) 0.3s both;
+}
+
+.hero__name .highlight {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle / Typing area */
+.hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 0.8s var(--ease-out-expo) 0.45s both;
+}
+
+/* Typing wrapper */
+.hero__typing {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--accent-cyan);
+  min-height: 1.75em;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s var(--ease-out-expo) 0.55s both;
+}
+
+/* Blinking cursor */
+.hero__cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--accent-cyan);
+  margin-left: 4px;
+  animation: blink-cursor 0.75s step-end infinite;
+  border-radius: 1px;
+  box-shadow: 0 0 6px var(--accent-cyan);
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* Description */
+.hero__description {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s var(--ease-out-expo) 0.65s both;
+}
+
+/* — CTA Buttons --------------------------------------------- */
+.hero__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s var(--ease-out-expo) 0.75s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              background var(--transition-base);
+}
+
+.btn--primary {
+  background: var(--gradient-accent);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 229, 255, 0.4),
+              0 0 40px rgba(124, 77, 255, 0.2);
+}
+
+.btn--secondary {
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+/* — Scroll Indicator ---------------------------------------- */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeIn 1s var(--ease-out-expo) 1.2s both;
+}
+
+.hero__scroll-chevron {
+  width: 24px;
+  height: 24px;
+  border-right: 2px solid var(--accent-cyan);
+  border-bottom: 2px solid var(--accent-cyan);
+  transform: rotate(45deg);
+  animation: bounce-chevron 2s ease-in-out infinite;
+}
+
+@keyframes bounce-chevron {
+  0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+  50%      { transform: rotate(45deg) translateY(8px); opacity: 0.4; }
+}
+
+/* — Responsive ---------------------------------------------- */
+@media (max-width: 480px) {
+  .hero__cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__scroll-indicator {
+    bottom: 1rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .hero {
+    min-height: auto;
+    padding: calc(var(--nav-height) + 2rem) 1rem 3rem;
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+}
