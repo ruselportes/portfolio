@@ -24,8 +24,14 @@
   left: 50%;
   width: 2px;
   transform: translateX(-50%);
-  background: var(--gradient-accent);
-  opacity: 0.4;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-cyan),
+    var(--accent-violet),
+    transparent
+  );
+  opacity: 0.5;
 }
 
 /* Pulse animation on the line */
@@ -35,12 +41,16 @@
   top: 0;
   left: 50%;
   width: 2px;
-  height: 60px;
+  height: 80px;
   transform: translateX(-50%);
-  background: var(--gradient-accent);
+  background: linear-gradient(
+    to bottom,
+    var(--accent-cyan),
+    var(--accent-violet)
+  );
   border-radius: var(--radius-pill);
-  box-shadow: 0 0 10px var(--accent-cyan);
-  animation: timeline-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 12px var(--accent-cyan), 0 0 24px rgba(0, 229, 255, 0.3);
+  animation: timeline-pulse 3.5s ease-in-out infinite;
 }
 
 @keyframes timeline-pulse {
@@ -75,46 +85,51 @@
 .timeline__dot {
   position: absolute;
   top: 0.5rem;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--accent-cyan);
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.5),
-              0 0 24px rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.6),
+              0 0 28px rgba(0, 229, 255, 0.25);
   z-index: 2;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.timeline__item:hover .timeline__dot {
+  transform: scale(1.3);
 }
 
 .timeline__item:nth-child(odd) .timeline__dot {
-  right: -7px;
+  right: -8px;
 }
 
 .timeline__item:nth-child(even) .timeline__dot {
-  left: -7px;
+  left: -8px;
 }
 
 /* — Card ---------------------------------------------------- */
 .timeline__card {
   background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  padding: 1.65rem;
   transition: transform var(--transition-base),
               box-shadow var(--transition-base),
               border-color var(--transition-base);
 }
 
 .timeline__card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: rgba(0, 229, 255, 0.15);
-  box-shadow: 0 8px 30px rgba(0, 229, 255, 0.08);
+  box-shadow: 0 10px 36px rgba(0, 229, 255, 0.1);
 }
 
 /* — Date Badge ---------------------------------------------- */
 .timeline__date {
   display: inline-block;
-  padding: 0.3rem 0.75rem;
+  padding: 0.35rem 0.85rem;
   font-size: 0.75rem;
   font-weight: 600;
   font-family: var(--font-mono);
@@ -122,39 +137,40 @@
   background: rgba(0, 229, 255, 0.08);
   border: 1px solid rgba(0, 229, 255, 0.15);
   border-radius: var(--radius-pill);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 /* — Card Content -------------------------------------------- */
 .timeline__role {
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
 }
 
 .timeline__company {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--accent-violet);
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
 }
 
 .timeline__desc {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* — Scroll Reveal ------------------------------------------- */
 .timeline__item.animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(30px) scale(0.97);
 }
 
 .timeline__item.animate-on-scroll.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* — Mobile Layout ------------------------------------------- */
@@ -187,7 +203,7 @@
 
 @media (max-width: 480px) {
   .timeline__card {
-    padding: 1.25rem 1rem;
+    padding: 1.35rem 1.1rem;
   }
 
   .timeline__item,

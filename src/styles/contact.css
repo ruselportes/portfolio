@@ -5,27 +5,37 @@
 /* — Section ------------------------------------------------- */
 .contact {
   background: var(--bg-secondary);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-mesh);
+  pointer-events: none;
 }
 
 /* — Layout -------------------------------------------------- */
 .contact__wrapper {
   max-width: 700px;
   margin-inline: auto;
+  position: relative;
 }
 
 /* — Form Card ----------------------------------------------- */
 .contact__form-card {
   background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
+  border-radius: var(--radius-xl);
+  padding: 2.75rem 2.25rem;
 }
 
 @media (max-width: 480px) {
   .contact__form-card {
-    padding: 1.75rem 1.25rem;
+    padding: 2rem 1.35rem;
   }
 }
 
@@ -33,27 +43,27 @@
 .contact__form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
 }
 
 /* — Form Group ---------------------------------------------- */
 .contact__group {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 /* Two-column row for name/email */
 .contact__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  gap: 1.35rem;
 }
 
 @media (max-width: 480px) {
   .contact__row {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.6rem;
   }
 }
 
@@ -63,40 +73,42 @@
   font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 /* — Input / Textarea ---------------------------------------- */
 .contact__input,
 .contact__textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
-  font-size: 0.95rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.98rem;
   color: var(--text-primary);
   background: var(--bg-input);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   outline: none;
   transition: border-color var(--transition-base),
-              box-shadow var(--transition-base);
+              box-shadow var(--transition-base),
+              background var(--transition-base);
 }
 
 .contact__input::placeholder,
 .contact__textarea::placeholder {
-  color: rgba(160, 160, 184, 0.4);
+  color: rgba(136, 136, 164, 0.4);
 }
 
 .contact__input:focus,
 .contact__textarea:focus {
   border-color: var(--accent-cyan);
   box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1),
-              0 0 16px rgba(0, 229, 255, 0.08);
+              0 0 20px rgba(0, 229, 255, 0.1);
+  background: rgba(10, 10, 28, 0.8);
 }
 
 .contact__textarea {
-  min-height: 150px;
+  min-height: 160px;
   resize: vertical;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* — Submit Button ------------------------------------------- */
@@ -107,8 +119,8 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
+  padding: 0.95rem 2rem;
+  font-size: 1.02rem;
   font-weight: 600;
   color: var(--bg-primary);
   background: var(--gradient-accent);
@@ -120,11 +132,32 @@
               box-shadow var(--transition-base);
 }
 
+/* Shimmer sweep on hover */
+.contact__submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.25) 55%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.contact__submit:hover::after {
+  transform: translateX(100%);
+}
+
 .contact__submit:hover,
 .contact__submit:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(0, 229, 255, 0.35),
-              0 0 50px rgba(124, 77, 255, 0.15);
+  box-shadow: 0 8px 36px rgba(0, 229, 255, 0.4),
+              0 0 60px rgba(124, 77, 255, 0.15);
 }
 
 .contact__submit:active {
@@ -145,7 +178,7 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 2px solid rgba(10, 10, 26, 0.3);
+  border: 2px solid rgba(6, 6, 15, 0.3);
   border-top-color: var(--bg-primary);
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
@@ -168,8 +201,8 @@
 /* — Status Message ------------------------------------------ */
 .contact__status {
   text-align: center;
-  font-size: 0.88rem;
-  padding: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.85rem;
   border-radius: var(--radius-md);
   display: none;
 }
@@ -196,54 +229,54 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
+  gap: 1.15rem;
+  margin-top: 2.75rem;
 }
 
 .contact__social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
   color: var(--text-muted);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   transition: color var(--transition-base),
               background var(--transition-base),
               border-color var(--transition-base),
               box-shadow var(--transition-base),
-              transform var(--transition-base);
+              transform 0.3s var(--ease-spring);
 }
 
 .contact__social-link:hover,
 .contact__social-link:focus-visible {
   color: var(--accent-cyan);
   border-color: rgba(0, 229, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
-  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.25);
+  transform: translateY(-4px) scale(1.05);
 }
 
 .contact__social-link svg,
 .contact__social-link i {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 /* — Footer -------------------------------------------------- */
 .footer {
   text-align: center;
-  padding: 2.5rem 1rem;
+  padding: 2.75rem 1rem;
   border-top: 1px solid var(--border-glass);
   background: var(--bg-primary);
 }
 
 .footer__text {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .footer__text a {
@@ -256,24 +289,24 @@
 }
 
 .footer__heart {
-  color: var(--accent-violet);
+  color: var(--accent-rose);
   display: inline-block;
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.15); }
+  50%      { transform: scale(1.2); }
 }
 
 /* — Divider ------------------------------------------------- */
 .contact__divider {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.15rem;
+  margin-top: 2.25rem;
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 
 .contact__divider::before,
