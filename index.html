@@ -16,7 +16,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -25,19 +26,21 @@
     <script type="module" src="/src/main.js"></script>
 </head>
 <body>
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
 
     <!-- ======================== NAVIGATION ======================== -->
     <nav class="navbar" id="navbar">
         <div class="navbar__inner">
-            <a href="#hero" class="navbar__logo">Rusel<span>.</span></a>
+            <a href="#hero" class="navbar__logo">RUSEL<span>.</span></a>
             
             <!-- Desktop Links -->
             <div class="navbar__links">
-                <a href="#about" class="navbar__link">About</a>
-                <a href="#skills" class="navbar__link">Skills</a>
-                <a href="#projects" class="navbar__link">Projects</a>
-                <a href="#experience" class="navbar__link">Experience</a>
-                <a href="#contact" class="navbar__link">Contact</a>
+                <a href="#about" class="navbar__link">MISSION</a>
+                <a href="#skills" class="navbar__link">TECH</a>
+                <a href="#projects" class="navbar__link">ARCHIVES</a>
+                <a href="#experience" class="navbar__link">LOG</a>
+                <a href="#contact" class="navbar__link">SIGNAL</a>
             </div>
 
             <!-- Hamburger Button (Mobile) -->
@@ -51,11 +54,11 @@
 
     <!-- Mobile Drawer -->
     <div class="navbar__drawer" id="navDrawer">
-        <a href="#about" class="navbar__link">About</a>
-        <a href="#skills" class="navbar__link">Skills</a>
-        <a href="#projects" class="navbar__link">Projects</a>
-        <a href="#experience" class="navbar__link">Experience</a>
-        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="#about" class="navbar__link">MISSION</a>
+        <a href="#skills" class="navbar__link">TECH</a>
+        <a href="#projects" class="navbar__link">ARCHIVES</a>
+        <a href="#experience" class="navbar__link">LOG</a>
+        <a href="#contact" class="navbar__link">SIGNAL</a>
     </div>
     <div class="navbar__drawer-overlay" id="drawerOverlay"></div>
 
@@ -63,8 +66,11 @@
     <section class="hero" id="hero">
         <canvas id="hero-canvas" class="hero__canvas"></canvas>
         <div class="hero__content">
-            <p class="hero__greeting animate-on-scroll">Hi, I'm</p>
-            <h1 class="hero__name animate-on-scroll" data-delay="100">Rusel <span class="highlight">Portes</span></h1>
+            <div class="hero__status animate-on-scroll">
+                <span class="hero__status-dot"></span>
+                <span class="hero__status-text">SYS_STATUS // ONLINE</span>
+            </div>
+            <h1 class="hero__name animate-on-scroll" data-delay="100">RUSEL <span class="highlight">PORTES</span></h1>
             <div class="hero__typing animate-on-scroll" data-delay="200">
                 <span>&lt;</span><span id="typing-text"></span><span class="hero__cursor"></span><span>/&gt;</span>
             </div>
@@ -72,12 +78,12 @@
                 Full-Stack Developer crafting modern web apps, mobile experiences, and AI-powered solutions.
             </p>
             <div class="hero__cta animate-on-scroll" data-delay="400">
-                <a href="#projects" class="btn btn--primary">View My Work</a>
-                <a href="#contact" class="btn btn--secondary">Contact Me</a>
+                <a href="#projects" class="btn btn--primary">VIEW_ARCHIVES</a>
+                <a href="#contact" class="btn btn--secondary">ESTABLISH_LINK</a>
             </div>
         </div>
         <div class="hero__scroll-indicator">
-            <span>Scroll</span>
+            <span>SYS.DESCEND</span>
             <div class="hero__scroll-chevron"></div>
         </div>
     </section>
@@ -86,7 +92,11 @@
     <section class="section about section-padding" id="about">
         <div class="container">
             <div class="section-heading animate-on-scroll">
-                <h2>About <span>Me</span></h2>
+                <div class="section-heading__header">
+                    <h2>MISSION<span>_PROFILE</span></h2>
+                    <div class="tech-line"></div>
+                    <span class="section-heading__seq">SEQ:01</span>
+                </div>
             </div>
             <div class="about__grid">
                 <div class="about__image-wrapper animate-on-scroll" data-delay="100">
@@ -94,11 +104,15 @@
                         <img src="/avatar.png" alt="Rusel Portes">
                     </div>
                     <div class="about__badge">
-                        <span class="about__badge-icon">🤖</span>
-                        <span>AI-Assisted Developer</span>
+                        <span class="material-symbols-outlined about__badge-icon">smart_toy</span>
+                        <span>AI-ASSISTED DEVELOPER</span>
                     </div>
                 </div>
                 <div class="about__content">
+                    <div class="about__label animate-on-scroll" data-delay="150">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        OPERATIVE CLASSIFICATION
+                    </div>
                     <p class="about__bio animate-on-scroll" data-delay="200">
                         I'm <strong>Rusel</strong>, a Full-Stack Developer and BSIT student passionate about building end-to-end solutions — from responsive web apps and mobile experiences to AI-powered automation and IoT systems.
                     </p>
@@ -107,16 +121,19 @@
                     </p>
                     <div class="about__stats animate-on-scroll" data-delay="400">
                         <div class="about__stat">
+                            <span class="material-symbols-outlined about__stat-icon">rocket_launch</span>
                             <span class="about__stat-number">10+</span>
-                            <span class="about__stat-label">Projects Built</span>
+                            <span class="about__stat-label">MISSIONS BUILT</span>
                         </div>
                         <div class="about__stat">
+                            <span class="material-symbols-outlined about__stat-icon">terminal</span>
                             <span class="about__stat-number">6+</span>
-                            <span class="about__stat-label">Technologies</span>
+                            <span class="about__stat-label">STACKS DEPLOYED</span>
                         </div>
                         <div class="about__stat">
+                            <span class="material-symbols-outlined about__stat-icon">psychology</span>
                             <span class="about__stat-number">∞</span>
-                            <span class="about__stat-label">Curiosity</span>
+                            <span class="about__stat-label">CURIOUSITY</span>
                         </div>
                     </div>
                 </div>
@@ -128,15 +145,19 @@
     <section class="section skills section-padding" id="skills">
         <div class="container">
             <div class="section-heading animate-on-scroll">
-                <h2>Skills & <span>Technologies</span></h2>
+                <div class="section-heading__header">
+                    <h2>SKILLS_<span>TECH</span></h2>
+                    <div class="tech-line"></div>
+                    <span class="section-heading__seq">SEQ:02</span>
+                </div>
                 <p>Technologies I work with across the full stack</p>
             </div>
             <div class="skills__grid">
                 <!-- Frontend -->
                 <div class="skills__card animate-on-scroll" data-delay="200">
                     <div class="skills__card-header">
-                        <div class="skills__card-icon">🎨</div>
-                        <h3 class="skills__card-title">Frontend</h3>
+                        <div class="skills__card-icon"><span class="material-symbols-outlined">palette</span></div>
+                        <h3 class="skills__card-title">FRONTEND</h3>
                     </div>
                     <div class="skills__tags">
                         <span class="skills__tag">React</span>
@@ -150,8 +171,8 @@
                 <!-- Backend & Cloud -->
                 <div class="skills__card skills__card--violet animate-on-scroll" data-delay="300">
                     <div class="skills__card-header">
-                        <div class="skills__card-icon">☁️</div>
-                        <h3 class="skills__card-title">Backend & Cloud</h3>
+                        <div class="skills__card-icon"><span class="material-symbols-outlined">cloud</span></div>
+                        <h3 class="skills__card-title">BACKEND & CLOUD</h3>
                     </div>
                     <div class="skills__tags">
                         <span class="skills__tag">Laravel (PHP)</span>
@@ -166,8 +187,8 @@
                 <!-- Mobile & IoT -->
                 <div class="skills__card skills__card--rose animate-on-scroll" data-delay="400">
                     <div class="skills__card-header">
-                        <div class="skills__card-icon">📱</div>
-                        <h3 class="skills__card-title">Mobile & IoT</h3>
+                        <div class="skills__card-icon"><span class="material-symbols-outlined">smartphone</span></div>
+                        <h3 class="skills__card-title">MOBILE & IoT</h3>
                     </div>
                     <div class="skills__tags">
                         <span class="skills__tag">React Native</span>
@@ -180,8 +201,8 @@
                 <!-- AI & DevOps -->
                 <div class="skills__card skills__card--mixed animate-on-scroll" data-delay="500">
                     <div class="skills__card-header">
-                        <div class="skills__card-icon">🚀</div>
-                        <h3 class="skills__card-title">AI & DevOps</h3>
+                        <div class="skills__card-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+                        <h3 class="skills__card-title">AI & DEVOPS</h3>
                     </div>
                     <div class="skills__tags">
                         <span class="skills__tag">CrewAI</span>
@@ -201,16 +222,20 @@
     <section class="section projects section-padding" id="projects">
         <div class="container">
             <div class="section-heading animate-on-scroll">
-                <h2>Featured <span>Projects</span></h2>
+                <div class="section-heading__header">
+                    <h2>PROJECT_<span>ARCHIVES</span></h2>
+                    <div class="tech-line"></div>
+                    <span class="section-heading__seq">SEQ:03</span>
+                </div>
                 <p>A selection of projects I've built — all AI-assisted</p>
             </div>
 
             <!-- Filter Buttons -->
             <div class="projects__filters animate-on-scroll" data-delay="200">
-                <button class="projects__filter-btn active" data-filter="all">All</button>
-                <button class="projects__filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="projects__filter-btn active" data-filter="all">ALL</button>
+                <button class="projects__filter-btn" data-filter="fullstack">FULL-STACK</button>
                 <button class="projects__filter-btn" data-filter="ai">AI</button>
-                <button class="projects__filter-btn" data-filter="mobile">Mobile</button>
+                <button class="projects__filter-btn" data-filter="mobile">MOBILE</button>
                 <button class="projects__filter-btn" data-filter="iot">IoT</button>
             </div>
 
@@ -221,7 +246,7 @@
                 <div class="projects__card animate-on-scroll" data-category="fullstack" data-delay="300">
                     <div class="projects__card-image">
                         <img src="/src/assets/neofit.png" alt="NeoFit Fitness Gym Dashboard" loading="lazy">
-                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                        <span class="projects__ai-badge"><span class="material-symbols-outlined" style="font-size:14px">smart_toy</span> AI-ASSISTED</span>
                     </div>
                     <div class="projects__card-body">
                         <h3 class="projects__card-title">NeoFit Fitness Gym</h3>
@@ -250,7 +275,7 @@
                 <div class="projects__card animate-on-scroll" data-category="ai" data-delay="400">
                     <div class="projects__card-image">
                         <img src="/src/assets/tiktok-gen.png" alt="AI TikTok Generator Dashboard" loading="lazy">
-                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                        <span class="projects__ai-badge"><span class="material-symbols-outlined" style="font-size:14px">smart_toy</span> AI-ASSISTED</span>
                     </div>
                     <div class="projects__card-body">
                         <h3 class="projects__card-title">Local AI TikTok Generator</h3>
@@ -275,7 +300,7 @@
                 <div class="projects__card animate-on-scroll" data-category="iot" data-delay="500">
                     <div class="projects__card-image">
                         <img src="/src/assets/solarstation.png" alt="SolarStation IoT Dashboard" loading="lazy">
-                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                        <span class="projects__ai-badge"><span class="material-symbols-outlined" style="font-size:14px">smart_toy</span> AI-ASSISTED</span>
                     </div>
                     <div class="projects__card-body">
                         <h3 class="projects__card-title">SolarStation — IoT + Android</h3>
@@ -299,7 +324,7 @@
                 <div class="projects__card animate-on-scroll" data-category="fullstack" data-delay="600">
                     <div class="projects__card-image">
                         <img src="/src/assets/foodhub.png" alt="Foodhub Food Delivery System" loading="lazy">
-                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                        <span class="projects__ai-badge"><span class="material-symbols-outlined" style="font-size:14px">smart_toy</span> AI-ASSISTED</span>
                     </div>
                     <div class="projects__card-body">
                         <h3 class="projects__card-title">Foodhub — Food Delivery</h3>
@@ -323,7 +348,7 @@
                 <div class="projects__card animate-on-scroll" data-category="mobile" data-delay="700">
                     <div class="projects__card-image">
                         <img src="/scanledger-desktop.jpg" alt="ScanLedger AI OCR App" loading="lazy">
-                        <span class="projects__ai-badge">🤖 AI-Powered</span>
+                        <span class="projects__ai-badge"><span class="material-symbols-outlined" style="font-size:14px">smart_toy</span> AI-POWERED</span>
                     </div>
                     <div class="projects__card-body">
                         <h3 class="projects__card-title">ScanLedger — AI OCR Logbook</h3>
@@ -353,7 +378,7 @@
                 <div class="projects__card animate-on-scroll" data-category="fullstack" data-delay="800">
                     <div class="projects__card-image">
                         <img src="/src/assets/maternal-healthcare.png" alt="Maternal Health Hub Dashboard" loading="lazy">
-                        <span class="projects__ai-badge">🤖 AI-Assisted</span>
+                        <span class="projects__ai-badge"><span class="material-symbols-outlined" style="font-size:14px">smart_toy</span> AI-ASSISTED</span>
                     </div>
                     <div class="projects__card-body">
                         <h3 class="projects__card-title">Maternal Health Hub</h3>
@@ -382,7 +407,11 @@
     <section class="section experience section-padding" id="experience">
         <div class="container">
             <div class="section-heading animate-on-scroll">
-                <h2>My <span>Experience</span></h2>
+                <div class="section-heading__header">
+                    <h2>MISSION_<span>LOG</span></h2>
+                    <div class="tech-line"></div>
+                    <span class="section-heading__seq">SEQ:04</span>
+                </div>
                 <p>My journey in tech so far</p>
             </div>
 
@@ -391,7 +420,7 @@
                 <div class="timeline__item animate-on-scroll" data-delay="200">
                     <div class="timeline__dot"></div>
                     <div class="timeline__card">
-                        <span class="timeline__date">2026 — Present</span>
+                        <span class="timeline__date">2026 — ACTIVE</span>
                         <h3 class="timeline__role">Full-Stack & AI Projects</h3>
                         <p class="timeline__company">Personal / Open Source</p>
                         <p class="timeline__desc">Building production-grade applications — NeoFit Gym Dashboard (React + Laravel + Docker) and an AI-powered TikTok video generator using CrewAI + Remotion.</p>
@@ -449,7 +478,11 @@
     <section class="section contact section-padding" id="contact">
         <div class="container">
             <div class="section-heading animate-on-scroll">
-                <h2>Get In <span>Touch</span></h2>
+                <div class="section-heading__header">
+                    <h2>ESTABLISH_<span>SIGNAL</span></h2>
+                    <div class="tech-line"></div>
+                    <span class="section-heading__seq">SEQ:05</span>
+                </div>
                 <p>Have a project in mind? Let's work together.</p>
             </div>
 
@@ -471,14 +504,14 @@
                             <textarea id="contact-message" class="contact__textarea" name="message" placeholder="Tell me about your project..." required></textarea>
                         </div>
                         <button type="submit" class="contact__submit" id="contact-submit">
-                            <span class="contact__submit-text">Send Message</span>
+                            <span class="contact__submit-text">TRANSMIT_SIGNAL</span>
                             <span class="contact__spinner" aria-hidden="true"></span>
                         </button>
                     </form>
                     <div class="contact__status" id="contactStatus"></div>
                 </div>
 
-                <div class="contact__divider">or reach me directly</div>
+                <div class="contact__divider">OR ESTABLISH DIRECT_UPLINK</div>
 
                 <div class="contact__socials animate-on-scroll" data-delay="300">
                     <a href="https://github.com/ruselportes" target="_blank" rel="noopener noreferrer" class="contact__social-link" id="social-github" aria-label="GitHub">
@@ -496,7 +529,7 @@
     <footer class="footer">
         <div class="container">
             <p class="footer__text">
-                &copy; 2026 Rusel Portes. Built with <span class="footer__heart">♥</span> and AI-assisted development.
+                SYSTEM_STATUS: OPERATIONAL // &copy; 2026 RUSEL PORTES. Built with <span class="footer__heart">♥</span> and AI-assisted development.
             </p>
         </div>
     </footer>

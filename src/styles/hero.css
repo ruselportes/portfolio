@@ -1,5 +1,5 @@
 /* ============================================================
-   HERO.CSS — Full-Screen Hero · Canvas BG · CTA · Scroll Indicator
+   HERO.CSS — Full-Screen Hero · Cosmic Theme
    ============================================================ */
 
 /* — Section ------------------------------------------------- */
@@ -30,9 +30,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(0, 229, 255, 0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(124, 77, 255, 0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(255, 107, 157, 0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(0, 229, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 30%, rgba(205, 189, 255, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 80%, rgba(255, 107, 157, 0.03) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
 }
@@ -49,10 +49,10 @@
 
 /* Greeting */
 .hero__greeting {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
   font-weight: 400;
   color: var(--accent-cyan);
-  margin-bottom: 0.85rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-family: var(--font-mono);
@@ -67,6 +67,7 @@
   margin-bottom: 1.15rem;
   color: var(--text-primary);
   letter-spacing: -0.04em;
+  font-family: var(--font-display);
   animation: fadeInUp 0.8s var(--ease-out-expo) 0.3s both;
 }
 
@@ -91,23 +92,24 @@
   display: inline-flex;
   align-items: center;
   font-family: var(--font-mono);
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
   color: var(--accent-cyan);
   min-height: 1.75em;
   margin-bottom: 2.75rem;
   animation: fadeInUp 0.8s var(--ease-out-expo) 0.55s both;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
 
 /* Blinking cursor */
 .hero__cursor {
   display: inline-block;
-  width: 2.5px;
+  width: 2px;
   height: 1.2em;
   background: var(--accent-cyan);
   margin-left: 4px;
   animation: blink-cursor 0.75s step-end infinite;
   border-radius: 1px;
-  box-shadow: 0 0 8px var(--accent-cyan), 0 0 16px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 6px var(--accent-cyan);
 }
 
 @keyframes blink-cursor {
@@ -117,7 +119,7 @@
 
 /* Description */
 .hero__description {
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   color: var(--text-muted);
   max-width: 600px;
   margin-inline: auto;
@@ -140,10 +142,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 2rem;
-  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
   transition: transform var(--transition-base),
               box-shadow var(--transition-base),
               background var(--transition-base);
@@ -152,9 +157,9 @@
 }
 
 .btn--primary {
-  background: var(--gradient-accent);
-  color: var(--bg-primary);
-  box-shadow: 0 4px 24px rgba(0, 229, 255, 0.25);
+  background: var(--accent-cyan);
+  color: #111318;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
 
 /* Shimmer sweep on hover */
@@ -165,9 +170,9 @@
   background: linear-gradient(
     110deg,
     transparent 20%,
-    rgba(255, 255, 255, 0.25) 45%,
-    rgba(255, 255, 255, 0.35) 50%,
-    rgba(255, 255, 255, 0.25) 55%,
+    rgba(255, 255, 255, 0.2) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 55%,
     transparent 80%
   );
   transform: translateX(-100%);
@@ -181,24 +186,23 @@
 .btn--primary:hover,
 .btn--primary:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 36px rgba(0, 229, 255, 0.4),
-              0 0 50px rgba(124, 77, 255, 0.2);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.6), 0 0 32px rgba(0, 229, 255, 0.3);
 }
 
 .btn--secondary {
-  background: var(--bg-glass);
+  background: rgba(17, 19, 24, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: var(--text-primary);
-  border: 1px solid var(--border-glass);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.3);
 }
 
 .btn--secondary:hover,
 .btn--secondary:focus-visible {
   transform: translateY(-2px);
   border-color: var(--accent-cyan);
-  box-shadow: 0 0 24px rgba(0, 229, 255, 0.18);
-  background: rgba(0, 229, 255, 0.06);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+  background: rgba(0, 229, 255, 0.08);
 }
 
 /* — Scroll Indicator ---------------------------------------- */
@@ -213,7 +217,8 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   animation: fadeIn 1s var(--ease-out-expo) 1.2s both;
