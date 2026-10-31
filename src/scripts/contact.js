@@ -1,46 +1,32 @@
 /**
- * contact.js — Contact form interaction.
+ * contact.js — Contact form submission.
  *
- * Implements a mock submission flow showing a loading spinner
- * and displaying a success/error message on completion.
+ * The site is static (GitHub Pages), so the form opens the visitor's
+ * email client with a pre-filled message addressed to me.
  */
+
+const EMAIL = 'ruselportes21@gmail.com';
 
 export function initContactForm() {
   const form = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('contact-submit');
   const statusBox = document.getElementById('contactStatus');
 
-  if (!form || !submitBtn || !statusBox) return;
+  if (!form || !statusBox) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Reset status
-    statusBox.textContent = '';
-    statusBox.className = 'contact__status';
+    const data = new FormData(form);
+    const name = data.get('name').trim();
+    const email = data.get('email').trim();
+    const message = data.get('message').trim();
 
-    // Enter loading state
-    submitBtn.classList.add('loading');
+    const subject = `Portfolio inquiry from ${name}`;
+    const body = `${message}\n\n${name}\n${email}`;
+    window.location.href =
+      `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Simulate API request (e.g. Formspree or custom backend)
-    setTimeout(() => {
-      // Exit loading state
-      submitBtn.classList.remove('loading');
-
-      // Show success state
-      submitBtn.classList.add('success');
-      
-      statusBox.textContent = 'Message sent successfully! I will get back to you soon.';
-      statusBox.className = 'contact__status success show';
-
-      // Reset form fields
-      form.reset();
-
-      // Reset success button state after 3 seconds
-      setTimeout(() => {
-        submitBtn.classList.remove('success');
-      }, 3000);
-
-    }, 1500);
+    statusBox.textContent = `Your email app should open now. If it doesn't, email me at ${EMAIL}.`;
+    statusBox.className = 'contact__status success show';
   });
 }

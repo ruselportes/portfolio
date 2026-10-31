@@ -6,11 +6,11 @@
  */
 
 const PHRASES = [
-  'INITIALIZING MISSION PROTOCOLS...',
-  'FULLSTACK DEV // MOBILE CRAFT',
-  'AI-POWERED SYSTEMS // MODERN STACKS',
-  'DEPLOYING Next.js | React | Node',
-  'BUILDING THE FUTURE //',
+  'Full-Stack Developer',
+  'React + TypeScript',
+  'Node.js + Laravel APIs',
+  'MySQL + Docker',
+  'AI-Powered Apps',
 ];
 
 const TYPE_SPEED = 80;     // ms per character when typing

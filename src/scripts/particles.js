@@ -5,7 +5,7 @@
  * connecting lines and gentle mouse-repulsion.
  */
 
-const PARTICLE_COUNT = 80;
+const PARTICLE_COUNT = 45;
 const LINK_DISTANCE = 120;
 const MOUSE_RADIUS = 100;
 const MOUSE_FORCE = 0.6;
@@ -24,8 +24,8 @@ const mouse = { x: -9999, y: -9999 };
 /* ------------------------------------------------------------------ */
 
 const COLORS = [
-  { r: 0, g: 229, b: 255 },   // #00e5ff  cyan
-  { r: 124, g: 77, b: 255 },  // #7c4dff  violet
+  { r: 79, g: 179, b: 232 },  // #4fb3e8  accent
+  { r: 154, g: 163, b: 173 }, // #9aa3ad  muted grey
 ];
 
 function randomColor() {
@@ -107,7 +107,7 @@ function drawLinks() {
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = `rgba(0,229,255,${alpha})`;
+        ctx.strokeStyle = `rgba(79,179,232,${alpha})`;
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }

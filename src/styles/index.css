@@ -239,6 +239,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-cyan);
 }
 
+@media (max-width: 480px) {
+  .section-heading__header h2 {
+    white-space: normal;
+  }
+}
+
 .section-heading__seq {
   font-family: var(--font-mono);
   font-size: 11px;

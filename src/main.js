@@ -14,6 +14,7 @@ import './styles/skills.css';
 import './styles/projects.css';
 import './styles/timeline.css';
 import './styles/contact.css';
+import './styles/theme.css';
 
 /* ---- Modules ---- */
 import { initParticles } from './scripts/particles.js';

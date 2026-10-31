@@ -1,19 +1,17 @@
 # Rusel Portes — Full-Stack Developer Portfolio
 
-A premium, interactive personal portfolio website for **Rusel Portes**, built from scratch using modern web design principles. It features a dark glassmorphism aesthetic with glowing neon accents, custom interactive animations, and responsive layouts.
-
-This project was built entirely using AI-assisted development, utilizing **Antigravity** to draft layouts, establish design systems, construct components, and verify builds.
+Personal portfolio website for **Rusel Portes**, built from scratch with Vite and vanilla JavaScript. It uses a calm dark theme with a single blue accent, responsive layouts, and light motion.
 
 ---
 
-## 🚀 Live Demo Features
+## 🚀 Features
 
-- **✨ Constellation Particle Canvas**: A high-performance canvas element (`src/scripts/particles.js`) that spawns glowing cyan and violet particles which connect dynamically and gently drift away from the cursor.
-- **📟 Typewriter Hero**: Cycles through personal traits (`I build web apps`, `I design APIs`, `I ship with AI-assisted dev`, etc.) with terminal style tag syntax and a custom CSS blinking cursor.
-- **💎 Glassmorphic Card layouts**: Stat counters, timeline entries, project cards, and form containers use `backdrop-filter: blur(12px)` and semi-transparent borders to form layered glass overlays.
+- **🎨 Theme layer**: `src/styles/theme.css` is loaded last and sets the colors, typography, and flat card styles on top of the base stylesheets.
+- **✨ Particle Canvas**: A subtle canvas background in the hero (`src/scripts/particles.js`); hidden for visitors who prefer reduced motion.
+- **🖼️ Optimized images**: Project screenshots and the avatar are served as WebP.
 - **🔍 Dynamic Projects Filter**: Allows users to filter featured projects in real time (All, Full-Stack, AI, IoT) with fade and scale transition animations.
 - **📈 Alternating Journey Timeline**: Chronologically structures Rusel's history as a BSIT student, freelancer, and creator, animated via the `IntersectionObserver` scroll reveal engine.
-- **✉️ Interactive Contact Form**: A mock submit handler showing loaders, success statuses, and input field resets.
+- **✉️ Contact Form**: Opens the visitor's email client with a pre-filled message (the site is static, so there is no backend).
 
 ---
 
